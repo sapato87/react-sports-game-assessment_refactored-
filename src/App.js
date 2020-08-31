@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import sabresImage from "./asset/images/sabres.png";
+import spartansImage from "./asset/images/spartans.png";
+import shuttersImage from "./asset/images/shutters.png";
+import lionsImage from "./asset/images/lions.png";
 
-function App() {
+import "./App.css";
+import Game from "./components/game/Game";
+function App(props) {
+  const sabres = {
+    name: "Brookfields Sabres",
+    logoSrc: sabresImage,
+  };
+
+  const spartans = {
+    name: "Kainkordu Spartans",
+    logoSrc: spartansImage,
+  };
+
+  const shutters = {
+    name: "Magburaka Eagles",
+    logoSrc: shuttersImage,
+  };
+
+  const lions = {
+    name: "Simbakoro Foxes",
+    logoSrc: lionsImage,
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game venue="Parade Grounds" homeTeam={sabres} visitingTeam={spartans} />
+      <Game venue="Mafa Field" homeTeam={shutters} visitingTeam={lions} />
     </div>
   );
 }
